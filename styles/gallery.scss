@@ -1,0 +1,113 @@
+$primary-color: #6A0DAD; // Deep purple
+$secondary-color: #00CED1; // Turquoise
+$dark-gray: #333333;
+$text-color: #FFFFFF;
+
+// Fonts
+$font-heading: 'Roboto Mono', sans-serif;
+$font-body: 'PT Sans', sans-serif;
+
+body {
+  font-family: $font-body;
+  background-color: $dark-gray;
+  color: $text-color;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: $primary-color;
+  padding: 1rem 0;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+  }
+
+  h1 {
+    font-family: $font-heading;
+    font-size: 1.5rem;
+    color: $text-color;
+  }
+
+  nav {
+    ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        margin: 0 1rem;
+
+        a {
+          color: $text-color;
+          text-decoration: none;
+          font-weight: bold;
+
+          &:hover {
+            color: $secondary-color;
+          }
+
+          &.active {
+            color: $secondary-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+.gallery {
+  padding: 3rem;
+}
+
+.card-body {
+  background-color: $primary-color;
+}
+
+.card-title {
+  font-family: $font-heading;
+  color: $text-color;
+}
+
+.card-text {
+  font-family: $font-body;
+  color: $text-color;
+}
+
+footer {
+  text-align: center;
+  background-color: $primary-color;
+  color: $text-color;
+  padding: 1rem 0;
+}
+
+/* Responsive grid */
+@media (max-width: 1200px) { 
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem; /* Add space between cards */
+  }
+
+  .col-md-4 {
+    flex: 1 1 calc(33.33% - 1rem); /* 3 cards per row on medium screens */
+  }
+}
+
+@media (max-width: 992px) { 
+  .col-md-4 {
+    flex: 1 1 calc(50% - 1rem); /* 2 cards per row on medium screens */
+  }
+}
+
+@media (max-width: 576px) { 
+  .col-md-4 {
+    flex: 1 1 100%; /* 1 card per row on small screens */
+  }
+}
